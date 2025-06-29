@@ -46,17 +46,17 @@ Website/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Sahan2O4/AcousticHaven
    ```
 
 2. **Host Locally**
-   - Use [XAMPP](https://www.apachefriends.org/index.html) or [WAMP](https://www.wampserver.com/) to run the PHP files.
+   - Use [XAMPP](https://www.apachefriends.org/login.html) or [WAMP](https://www.wampserver.com/) to run the PHP files.
    - Place the `Website` folder inside `htdocs`.
    - Start Apache and MySQL services.
 
 3. **Open in Browser**
    ```url
-   http://localhost/Website/index.html
+   http://localhost/Website/login.html
    ```
 
 > ⚠️ If using PHP files like `admin_login.php`, ensure your server is running correctly with PHP and MySQL support.
