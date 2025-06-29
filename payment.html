@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Order</title>
+    <link rel="stylesheet" href="confirm.css">
+</head>
+<body>
+    <h2>Enter Your Email to Confirm Order</h2>
+
+    <!-- Display Cart Items -->
+    <section id="cart-summary">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: Rs. 0</p>
+        <br>
+        <h3>Pay the price to our delivery partner when you get the item</h3>
+        <br>
+        <h4>See you soon!</h4>
+    </section>
+
+    <!-- Order Form -->
+    <form id="order-form">
+        <input type="email" name="email" id="email" placeholder="Your email" required>
+        <textarea name="address" id="address" placeholder="Your delivery address" required rows="4" cols="50"></textarea>
+        <button type="submit">Place Order</button>
+    </form>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalPriceElement = document.getElementById("total-price");
+
+        let total = 0;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            totalPriceElement.textContent = "Total: Rs. 0";
+        } else {
+            cart.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.textContent = `${item.name} - Rs.${parseInt(item.price).toLocaleString()}`;
+                cartItemsContainer.appendChild(itemElement);
+                total += parseInt(item.price);
+            });
+
+            totalPriceElement.textContent = "Total: Rs. " + total.toLocaleString();
+        }
+
+        // Handle form submission
+        const form = document.getElementById("order-form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form from reloading the page
+
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+
+            if (!email || !address) {
+                alert("Please enter both email and address.");
+                return;
+            }
+
+            fetch("place_order.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: email,
+                    address: address,
+                    cart: cart
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                localStorage.removeItem("cart");
+                window.location.href = "Shop.php"; // or wherever you want to redirect
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("There was an error placing your order.");
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+}
+
+/* Dashboard container card */
+.dashboard-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Heading */
+.dashboard-container h1 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+/* Welcome */
+.dashboard-container p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Button container */
+.admin-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Base button style */
+.admin-options a {
+    text-decoration: none;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    text-align: center;
+}
+
+/* Individual button colors */
+.admin-options a[href*="sales_report"] {
+    background-color: #1976D2; /* Blue */
+}
+
+.admin-options a[href*="add_product"] {
+    background-color: #388E3C; /* Green */
+}
+
+.admin-options a[href*="remove_product"] {
+    background-color: #F57C00; /* Orange */
+}
+
+.admin-options a[href*="contact_messages"] {
+    background-color: #7B1FA2; /* Purple */
+}
+.admin-options a[href*="order_report"] {
+    background-color: #d3c52f; /* Red */
+}
+
+.admin-options a[href*="logout"] {
+    background-color: #D32F2F; /* Red */
+}
+
+/* Hover effect */
+.admin-options a:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 30px 20px;
+    }
+
+    .admin-options a {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

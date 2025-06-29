@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Acoustic Haven</title>
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="menu-icon"></span> Acoustic Haven
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Acoustic.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Conact.html">Contact</a></li>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="polic.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="register-container">
+        <h2>Create Account</h2>
+        <form action="Register.php" method="POST">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{10,15}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Acoustic Haven. All rights reserved.</p>
+    </footer>
+</body>
+</html>

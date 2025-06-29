@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Acoustic Haven - Home</title>
+    <link rel="stylesheet" href="Acoustic.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="menu-icon"></span> Acoustic Haven
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Acoustic.html" class="active">Home</a></li>
+                <li><a href="Shop.php">Shop</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Conact.html">Contact</a></li>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="polic.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <div class="cart-container">
+            <a href="cart.html">
+                <img src="shopping-cart.png" alt="Cart" class="cart-img">
+                <span class="cart-text">View Cart</span>
+            </a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Find Your Perfect Guitar</h1>
+        <p>Authentic, Limited Edition, Artist-Signed Guitars</p>
+        <a href="Shop.php" class="btn">Shop Now</a>
+    </section>
+    <br>
+    <br>
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="lowden.jpeg" alt="Guitar 1">
+        </div>
+        <div class="slide fade">
+            <img src="making.webp" alt="Guitar 2">
+        </div>
+        <div class="slide fade">
+            <img src="both.webp" alt="Guitar 3">
+        </div>
+    
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    
+    
+    <section class="featured">
+        <h2>Featured Brands</h2>
+        <br>
+        <div class="guitar-list">
+            <div class="guitar-item">
+                <img src="G4.jpg" alt="Fender"><p>Fender</p></div>
+                <div class="guitar-item"><img src="GG.jpg" alt="Gibson"><p>Gibson</p></div>
+                <div class="guitar-item"><img src="GGGG.jpg" alt="Sheeran"><p>Sheeran</p></div>
+                
+        </div>
+    </section>
+    
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Authentic Products</li>
+            <li>Island-wide Delivery</li>
+            <li>Exclusive Collections</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Acoustic Haven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");//gets all the elements
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;//increment to the next slide
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Changes in 3 secs
+        }
+    
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            
+            showSlides();
+        }
+    </script>
+    
+</body>
+
+</html>

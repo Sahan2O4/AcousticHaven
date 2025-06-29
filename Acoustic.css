@@ -1,0 +1,262 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+
+nav ul li a.active {
+    background-color: #ff6600;
+    color: white;
+}
+
+
+nav ul li a:hover {
+    background-color: #e55d00;
+    color: white;
+}
+
+
+.cart-container {
+    display: flex;
+    align-items: center;
+    background-color: #ff6600;
+    padding: 6px 10px; 
+    border-radius: 4px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-img {
+    width: 25px; 
+    height: 25px;
+    margin-right: 6px; 
+}
+
+.cart-text {
+    font-size: 14px; 
+    font-weight: bold;
+    color: white;
+    
+}
+
+.cart-container:hover {
+    background-color: #e55d00; 
+}
+
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 15px; 
+}
+
+/* Slideshow Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: url('SGuitar.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+
+.btn:hover {
+    background: #e55d00;
+}
+
+
+.featured {
+    text-align: center;
+    padding: 40px;
+}
+
+.featured h2 {
+    margin-bottom: 20px;
+}
+
+
+.guitar-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.guitar-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 180px;
+}
+
+.guitar-item:hover {
+    transform: scale(1.05);
+}
+
+.guitar-item img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+
+.why-choose-us {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-choose-us li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .cart-container {
+        margin-top: 10px;
+    }
+
+    .guitar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slideshow-container {
+        height: auto;
+    }
+
+    .slide img {
+        max-height: 300px;
+    }
+}

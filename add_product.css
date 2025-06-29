@@ -1,0 +1,109 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+}
+
+/* Form container */
+.form-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Heading */
+.form-container h2 {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+/* Message display */
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: rgb(5, 5, 5);
+}
+
+.message:contains('successfully') {
+    background-color: #4CAF50;
+}
+
+.message:contains('Failed') {
+    background-color: #f44336;
+}
+
+/* Form fields */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Submit button */
+form input[type="submit"] {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1976D2;
+}
+
+/* Back link */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+}
